@@ -83,3 +83,28 @@ console.log(...myFriends[1][1]);
 console.log(myFriends[myFriends.length - 1]);
 myFriends[2] = "Mati";
 console.log(myFriends);
+const firstName = "Esteban";
+const age = 2023 - 1979;
+const myInfo = [firstName, age, myFriends];
+console.log(myInfo);
+console.log(
+  `my name is ${myInfo[0]}, I am ${myInfo[1]} years old, my friends are ${myInfo[2]}`
+);
+console.log(...myFriends[1]);
+
+const newFriend = myFriends.push("Mono"); //Gives me the position of the new item
+console.log(newFriend);
+
+const firstFriendAdded = myFriends.unshift("Tubu");
+console.log(firstFriendAdded);
+console.log(myFriends);
+const popfrind = myFriends.pop();
+console.log(popfrind);
+console.log(myFriends);
+
+const firstRemoved = myFriends.shift();
+console.log(firstRemoved);
+console.log(myFriends);
+console.log(myFriends.indexOf("Emi"));
+console.log(myFriends.includes("Mati"));
+console.log(myFriends.includes("Mono"));

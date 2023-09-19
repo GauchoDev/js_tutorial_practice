@@ -126,7 +126,7 @@ Test data:
 Hints:
 § To calculate average of 3 values, add them all together and divide by 3
 § To check if number A is at least double number B, check for A >= 2 * B.
-Apply this to the team's average scores 😉 */
+Apply this to the team's average scores 😉 
 // 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
 const calcAverage = (score1, score2, score3) => {
   return (score1 + score2 + score3) / 3;
@@ -148,3 +148,28 @@ const checkWinner = function (dolphinAverage, koalaAverage) {
 checkWinner(averageDolphins, averageKoalas);
 // console.log(`The average score for Dolphins is ${averageDolphins}`);
 // console.log(`The average score for Koalas is ${averageKoalas}`);
+*/
+
+//Arrays coding challenge
+/*
+const tipCalc = (bill) => {
+  let tip = bill > 50 && bill < 300 ? 0.15 * bill : 0.2 * bill;
+
+  return tip;
+};
+
+const bills = [125, 555, 44];
+const tips = [];
+const totals = [];
+
+for (i = 0; i < bills.length; i++) {
+  tips.push(tipCalc(bills[i]));
+}
+for (i = 0; i < bills.length; i++) {
+  totals.push(tips[i] + bills[i]);
+}
+console.log(125 * 0.15, 555 * 0.2, 44 * 0.2);
+console.log(bills);
+console.log(tips);
+console.log(totals);
+*/
