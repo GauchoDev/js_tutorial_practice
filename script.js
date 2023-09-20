@@ -73,6 +73,7 @@ console.log(retCalculator(1980, "Emiliano"));
 
 //Arrays
 
+/*
 const myFriends = ["Juan", "Emi", "Mono"];
 console.log(myFriends);
 
@@ -108,3 +109,65 @@ console.log(myFriends);
 console.log(myFriends.indexOf("Emi"));
 console.log(myFriends.includes("Mati"));
 console.log(myFriends.includes("Mono"));
+*/
+
+//object
+const esteban = {
+  firstName: "Esteban",
+  lastName: "Negrete",
+  birtday: 1979,
+  job: "programmer",
+  friends: ["Juan", "Emi", "Mono"],
+  hasDriverLicense: false,
+  //Method when function is in an object
+  // calcAge: function () {
+  //   return 2023 - this.birtday;
+  // },
+
+  calcAge: function () {
+    this.age = 2023 - this.birtday;
+    return this.age;
+  },
+
+  summary: function () {
+    const text = this.hasDriverLicense
+      ? "has a driver's license"
+      : "does not have a driver's licens";
+    const mySummary = `${this.firstName} is a ${this.age} years old ${this.job} and he ${text}`;
+    return mySummary;
+  },
+};
+
+esteban.location = "Chivilcoy";
+
+console.log(esteban["summary"]());
+const myInfo = esteban.summary();
+console.log(myInfo);
+// console.log(
+//   `${esteban.firstName} has 3 friends and his best friend is ${esteban["friends"][1]}`
+// );
+
+// console.log(
+//   `${esteban["firstName"]} has 3 friends and his best friend is ${esteban.friends[1]}`
+// );
+
+// const namekey = "Name";
+// console.log(esteban.lastName);
+// console.log(esteban["lastName"]);
+// console.log(esteban["last" + namekey]);
+// let interestesIn = prompt(
+//   "What are you interested in? Choose between firstName, lastName, age, job, friends"
+// );
+
+// if (esteban[interestesIn]) {
+//   console.log(Boolean(interestesIn));
+//   console.log(esteban[interestesIn]);
+// } else {
+//   console.log(Boolean(interestesIn));
+//   alert("wrong option");
+//   console.log(esteban[interestesIn]);
+//   interestesIn = prompt(
+//     "What are you interested in? Choose between firstName, lastName, age, job, friends"
+//   );
+//   console.log(esteban[interestesIn]);
+// }

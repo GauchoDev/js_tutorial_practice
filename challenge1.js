@@ -173,3 +173,49 @@ console.log(bills);
 console.log(tips);
 console.log(totals);
 */
+const john = {
+  firstName: "john",
+  lastName: "Smith",
+  mass: 92,
+  height: 1.95,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+
+const mark = {
+  firstName: "mark",
+  lastName: "miller",
+  mass: 78,
+  height: 1.69,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+const markFullName = mark.fullName();
+const markBMI = mark.calcBMI();
+const johnFullName = john.fullName();
+const johnBMI = john.calcBMI();
+console.log(markFullName);
+console.log(johnFullName);
+console.log(markBMI);
+console.log(johnBMI);
+if (markBMI > johnBMI) {
+  console.log(
+    `${markFullName}'s BMI ${markBMI.toFixed(
+      2
+    )} is bigger than ${johnFullName}'s BMI ${johnBMI.toFixed(2)}`
+  );
+} else {
+  console.log(
+    `${johnFullName}'s BMI ${johnBMI.toFixed(
+      2
+    )} is bigger than ${markFullName}'s BMI ${markBMI.toFixed(2)}`
+  );
+}
