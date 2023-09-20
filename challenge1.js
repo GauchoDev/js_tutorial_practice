@@ -173,3 +173,87 @@ console.log(bills);
 console.log(tips);
 console.log(totals);
 */
+
+/*
+const john = {
+  firstName: "john",
+  lastName: "Smith",
+  mass: 92,
+  height: 1.95,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+
+const mark = {
+  firstName: "mark",
+  lastName: "miller",
+  mass: 78,
+  height: 1.69,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+const markFullName = mark.fullName();
+const markBMI = mark.calcBMI();
+const johnFullName = john.fullName();
+const johnBMI = john.calcBMI();
+console.log(markFullName);
+console.log(johnFullName);
+console.log(markBMI);
+console.log(johnBMI);
+if (markBMI > johnBMI) {
+  console.log(
+    `${markFullName}'s BMI ${markBMI.toFixed(
+      2
+    )} is bigger than ${johnFullName}'s BMI ${johnBMI.toFixed(2)}`
+  );
+} else {
+  console.log(
+    `${johnFullName}'s BMI ${johnBMI.toFixed(
+      2
+    )} is bigger than ${markFullName}'s BMI ${markBMI.toFixed(2)}`
+  );
+}
+*/
+
+//1) create an array called bills containing al 10 test bill values
+const bills = [22, 295, 178, 440, 37, 105, 10, 1100, 86, 52];
+//2) Create empty arrays for the tips and the totals
+const tips = [];
+const totals = [];
+//3)Use the calcTip functionto calculate the total values.  (bill + tip )for every bill value in the array.
+const calcTip = function (bill) {
+  let tip = bill > 50 && bill <= 300 ? 0.15 : 0.2;
+  return bill * tip;
+};
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(tips[i] + bills[i]);
+}
+console.log(tips);
+console.log(totals);
+//4)Use a  calaAverage function to calculate the average. It takes (arr) as an argument.
+const calcAverage = function (arr) {
+  let sum = 0;
+  let counter = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    counter++;
+  }
+  return sum / counter;
+};
+
+const averageBill = calcAverage(bills);
+const averageTip = calcAverage(tips);
+const averageTotal = calcAverage(totals);
+
+console.log(averageBill);
+console.log(averageTip);
+console.log(averageTotal);
