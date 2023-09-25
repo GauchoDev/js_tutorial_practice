@@ -1,3 +1,5 @@
+const { error } = require("protractor");
+
 Math.round();
 /*Coding Challenge #1
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula:
@@ -223,31 +225,37 @@ if (markBMI > johnBMI) {
 }
 */
 
-//1) create an array called bills containing al 10 test bill values
+// 1) create an array called bills containing all 10 test bill values, including a "Not a number" value
 const bills = [22, 295, 178, 440, 37, 105, 10, 1100, 86, 52];
-//2) Create empty arrays for the tips and the totals
+
+// 2) Create empty arrays for the tips and the totals
 const tips = [];
 const totals = [];
-//3)Use the calcTip functionto calculate the total values.  (bill + tip )for every bill value in the array.
+
+// 3) Use the calcTip function to calculate the total values (bill + tip) for every bill value in the array.
 const calcTip = function (bill) {
   let tip = bill > 50 && bill <= 300 ? 0.15 : 0.2;
   return bill * tip;
 };
+
 for (let i = 0; i < bills.length; i++) {
-  tips.push(calcTip(bills[i]));
-  totals.push(tips[i] + bills[i]);
+  for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(tips[i] + bills[i]);
+  }
 }
+
 console.log(tips);
 console.log(totals);
-//4)Use a  calaAverage function to calculate the average. It takes (arr) as an argument.
+
+// 4) Use a calcAverage function to calculate the average. It takes (arr) as an argument.
 const calcAverage = function (arr) {
   let sum = 0;
-  let counter = 0;
+
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
-    counter++;
   }
-  return sum / counter;
+  return sum / arr.length;
 };
 
 const averageBill = calcAverage(bills);

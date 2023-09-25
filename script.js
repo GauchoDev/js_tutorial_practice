@@ -224,9 +224,32 @@ if (esteban[interestesIn]) {
 //   console.log(`${i})${esteban[i]}`);
 // }
 
-let dice = Math.trunc(Math.random() * 6) + 1;
-while (dice !== 6) {
-  console.log(dice);
-  dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) console.log("Loop is about to end....");
-}
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// while (dice !== 6) {
+//   console.log(dice);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log("Loop is about to end....");
+// }
+
+const values = [33, 45, 67, 56, "error", 1, 99, 45, 32];
+const newValues = [32, 98, 110, 4, 0];
+
+const calcMaxMin = function (arr1, arr2) {
+  const arr3 = arr1.concat(arr2);
+  let max = arr3[0];
+  let min = arr3[0];
+  for (let i = 1; i < arr3.length; i++) {
+    console.log(typeof arr3[i]);
+    if (typeof arr3[i] !== "number") continue;
+
+    if (arr3[i] > max) {
+      max = arr3[i];
+    }
+    if (arr3[i] < min) {
+      min = arr3[i];
+    }
+  }
+
+  return `The max is ${max} and the min is ${min}`;
+};
+console.log(calcMaxMin(values, newValues));
